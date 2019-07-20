@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="card-deck">
+    <div class="card">
+      <img
+        class="card-img-top cover"
+        src="assets/img/{{ albumsArray[0].id }}.jpg"
+        alt="Album cover for {{ albumsArray[0].albumName }}"
+        style="border: 1px solid grey"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ albumsArray[0].artist }}</h5>
+        <div class="scrollable">
+          <h6 class="card-title">{{ albumsArray[0].albumName }}</h6>
+          <h6 class="card-text">Released: {{ albumsArray[0].releaseDate }}</h6>
+          <h6>{{ albumsArray[0].price }} {{ albumsArray[0].currency }}</h6>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img
+        class="card-img-top cover"
+        src="assets/img/{{ albumsArray[1].id }}.jpg"
+        alt="{{ albumsArray[1].albumName }}"
+        style="border: 1px solid grey"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ albumsArray[1].artist }}</h5>
+        <div class="scrollable">
+          <h6 class="card-title">{{ albumsArray[1].albumName }}</h6>
+          <h6 class="card-text">Released: {{ albumsArray[1].releaseDate }}</h6>
+          <h6>{{ albumsArray[1].price }} {{ albumsArray[1].currency }}</h6>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img
+        class="card-img-top cover"
+        src="assets/img/{{ albumsArray[2].id }}.jpg"
+        alt="{{ albumsArray[2].albumName }}"
+        style="border: 1px solid grey"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ albumsArray[2].artist }}</h5>
+        <div class="scrollable">
+          <h6 class="card-title">{{ albumsArray[2].albumName }}</h6>
+          <h6 class="card-text">Released: {{ albumsArray[2].releaseDate }}</h6>
+          <h6>{{ albumsArray[2].price }} {{ albumsArray[2].currency }}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
