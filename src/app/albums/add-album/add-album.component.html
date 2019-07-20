@@ -1,0 +1,137 @@
+<div class="container">
+  <h2>Add Album</h2>
+  <form #form="ngForm" (ngSubmit)="addAlbum(form.value)">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Artist</label>
+        <input
+          type="text"
+          class="form-control"
+          name="artist"
+          [(ngModel)]="album.artist"
+          required
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label>Album Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="album_name"
+          [(ngModel)]="album.albumName"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>Release Date</label>
+        <input
+          type="text"
+          class="form-control"
+          name="release_date"
+          [(ngModel)]="album.releaseDate"
+          required
+        />
+      </div>
+      <div class="form-group col-md-4">
+        <label>Recording Location</label>
+        <input
+          type="text"
+          class="form-control"
+          name="recording_location"
+          [(ngModel)]="album.recordingLocation"
+          required
+        />
+      </div>
+      <div class="form-group col-md-4">
+        <label>Genre</label>
+        <input
+          type="text"
+          class="form-control"
+          name="genre"
+          [(ngModel)]="album.genre"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>Duration (Format: ##:##:##)</label>
+        <input
+          type="text"
+          class="form-control"
+          name="duration"
+          [(ngModel)]="album.duration"
+          required
+        />
+      </div>
+      <div class="form-group col-md-8">
+        <label>Image / Source URL</label>
+        <input
+          type="text"
+          class="form-control"
+          name="url"
+          [(ngModel)]="album.url"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <label>Price</label>
+        <input
+          type="number"
+          min="0.01"
+          step="0.01"
+          class="form-control"
+          name="price"
+          [(ngModel)]="album.price"
+          required
+        />
+      </div>
+      <div class="form-group col-md-5">
+        <label>Currency</label>
+        <input
+          type="text"
+          class="form-control"
+          name="currency"
+          [(ngModel)]="album.currency"
+          required
+        />
+      </div>
+      <div class="form-group col-md-2">
+        <label>On Sale</label>
+        <input
+          type="checkbox"
+          class="form-control"
+          name="on_sale"
+          [(ngModel)]="album.onSale"
+        />
+      </div>
+    </div>
+
+    <div>
+      <span>Form state: </span>
+      <span class="badge badge-pill badge-success" *ngIf="form.valid"
+        >Valid</span
+      >
+      <span class="badge badge-pill badge-danger" *ngIf="form.invalid"
+        >Invalid</span
+      >
+      <button
+        type="submit"
+        class="btn btn-success float-right"
+        [disabled]="form.invalid"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+
+  <hr />
+  <pre>{{ album | json }}</pre>
+</div>
