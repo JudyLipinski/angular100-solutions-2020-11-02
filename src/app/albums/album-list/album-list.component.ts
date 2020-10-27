@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Album } from "./albums/album.model";
+import { Album } from "../album.model";
 
 @Component({
   selector: "app-album-list",
@@ -7,9 +7,8 @@ import { Album } from "./albums/album.model";
   styleUrls: ["./album-list.component.css"]
 })
 export class AlbumListComponent implements OnInit {
-  albumsArray: any;
+  albumsArray: Album[];
 
-  // import { Album } from "../album.model";
 
   ngOnInit(): void {
     this.albumsArray = [
@@ -17,7 +16,7 @@ export class AlbumListComponent implements OnInit {
       id: 1,
       artist: "Tremonti",
       albumName: "Dust",
-      onSale: true,
+      isOnSale: true,
       price: 11.99,
       currency: "USD",
       year: 2016,
@@ -31,7 +30,7 @@ export class AlbumListComponent implements OnInit {
       id: 2,
       artist: "Bon Jovi",
       albumName: "7800 Fahrerenheit",
-      onSale: false,
+      isOnSale: false,
       price: 7,
       year: 1985,
       currency: "USD",
@@ -45,7 +44,7 @@ export class AlbumListComponent implements OnInit {
       id: 3,
       artist: "The Beatles",
       albumName: "The White Album",
-      onSale: true,
+      isOnSale: true,
       currency: "GBP",
       price: 24,
       year: 1968,
@@ -55,5 +54,7 @@ export class AlbumListComponent implements OnInit {
       duration: "1:33:43",
       url: "https://www.allmusic.com/album/the-beatles-white-album-mw0000418113"
     }];
+
+    console.log(this.albumsArray);
   }
 }
