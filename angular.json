@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test-project": {
+    "my-angular-albums": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test-project",
+            "outputPath": "dist/my-angular-albums",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -62,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "test-project:build"
+            "browserTarget": "my-angular-albums:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "test-project:build:production"
+              "browserTarget": "my-angular-albums:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "test-project:build"
+            "browserTarget": "my-angular-albums:build"
           }
         },
         "test": {
@@ -110,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "test-project:serve"
+            "devServerTarget": "my-angular-albums:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "test-project:serve:production"
+              "devServerTarget": "my-angular-albums:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "test-project"
+  "defaultProject": "my-angular-albums"
 }
