@@ -1,16 +1,8 @@
 <div class="container-fluid">
   <div class="card-deck">
-    <app-album-card
-     [album]="albumsArray[0]"
-     (albumClicked)="parentFunctionHandler($event)"
-   ></app-album-card>
-   <app-album-card
-     [album]="albumsArray[1]"
-     (albumClicked)="parentFunctionHandler($event)"
-   ></app-album-card>
-   <app-album-card
-     [album]="albumsArray[2]"
-     (albumClicked)="parentFunctionHandler($event)"
-   ></app-album-card>
+    <app-album-card *ngFor="let album of albumsArray"
+        [album]="album"
+        (albumClicked)="parentFunctionHandler($event)">
+    </app-album-card>
   </div>
 </div>
