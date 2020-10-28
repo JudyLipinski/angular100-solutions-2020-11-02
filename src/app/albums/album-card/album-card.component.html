@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="inner">
+    <img class="card-img-top cover" src="assets/img/{{ album.id }}.jpg" alt="Album cover for {{ album.albumName }}"
+      style="border: 1px solid grey" />
+  </div>
+  <div class="card-body">
+    <div class="scrollable">
+      <h5 class="card-title">{{ album.artist }}</h5>
+      <div class="scrollable">
+        <h6 class="card-title">{{ album.albumName }}</h6>
+        <h6 class="card-text">Released: {{ album.releaseDate }}</h6>
+        <h6>{{ album.price }} {{ album.currency }}</h6>
+      </div>
+    </div>
+  </div>
+</div>
