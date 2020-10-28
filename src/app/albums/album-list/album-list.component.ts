@@ -10,11 +10,17 @@ import { ALBUMS } from "../albums.data";
 export class AlbumListComponent implements OnInit {
   albumsArray: Album[];
 
+  constructor(private albumService: AlbumService) { };
+
   parentFunctionHandler(album: Album): void {
     alert('Album ' + album.albumName + ' was sent from the album card component');
   }
 
   ngOnInit(): void {
-    this.albumsArray = ALBUMS;
-   }
+    this.getAlbums();
+  }
+
+   getAlbums(): void {
+    this.albumsArray = this.albumService.getAlbums();
+  }
 }
