@@ -18,6 +18,9 @@
   max-height: 6.42rem;
 }
 
+
+/* Add shadows to create the "card" effect */
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -27,12 +30,18 @@
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.42);
 }
 
+
+/* Add rounded corners, to the top left and the top right corner of the image */
+
 .card {
   border-radius: 5px; /* 5px rounded corners */
 }
 .card img {
   border-radius: 5px 5px 0 0;
 }
+
+
+/* 3 below selectors make album images zoom in when cursor hover */
 
 .inner {
   overflow: hidden; /*this will hide overflow, so image doesnt show outside of the card as it grows */
