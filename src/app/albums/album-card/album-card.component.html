@@ -9,7 +9,15 @@
     <div class="scrollable">
       <h6 class="card-title">{{ album.albumName }}</h6>
       <h6 class="card-text">Released: {{ album.releaseDate }}</h6>
-      <h6>{{ album.price }} {{ album.currency }}</h6>
+
+      <h6>
+        <span *ngIf="album.isOnSale" style="text-decoration:line-through;">
+          {{album.price | number:'1.2-2' | currency:album.currency }}
+        </span>
+          {{ (album.isOnSale ? newPrice : album.price)
+            | number:'1.2-2' | currency:album.currency }}
+      </h6>
+
     </div>
   </div>
 

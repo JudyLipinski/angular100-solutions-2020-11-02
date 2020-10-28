@@ -7,6 +7,7 @@ import { Album } from '../album.model';
   styleUrls: ['./album-card.component.css']
 })
 export class AlbumCardComponent implements OnInit {
+  newPrice: number;
 
   @Input()
   album: Album;
@@ -15,6 +16,10 @@ export class AlbumCardComponent implements OnInit {
   albumClicked: EventEmitter<Album> = new EventEmitter<Album>();
 
   ngOnInit(): void {
+    if (this.album.isOnSale) {
+      // Apply 10% discount
+      this.newPrice = this.album.price - (this.album.price * .10);
+      }
   }
 
   showAlbum(): void {
