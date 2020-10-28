@@ -3,7 +3,8 @@
     <img class="card-img-top cover" src="assets/img/{{ album.id }}.jpg" alt="Album cover for {{ album.albumName }}"
       style="border: 1px solid grey" />
   </div>
-  <div class="card-body">
+  <div class="card-body"
+          [ngStyle]="{ 'background-color': album.isOnSale ? '#93df93' : '' }">
     <h5 class="card-title">{{ album.artist }}</h5>
     <div class="scrollable">
       <h6 class="card-title">{{ album.albumName }}</h6>
