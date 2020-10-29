@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4444 -o",
+    "start": "run-p start-db start-app",
+    "start-app": "ng serve --port 4444 -o",
+    "start-db": "json-server --watch data/music-info.json --port 3334",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -20,6 +22,8 @@
     "@angular/platform-browser-dynamic": "~10.2.0",
     "@angular/router": "~10.2.0",
     "bootstrap": "^4.5.3",
+    "json-server": "^0.16.2",
+    "npm-run-all": "^4.1.5",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
