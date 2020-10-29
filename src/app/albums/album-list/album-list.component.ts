@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { Observable } from 'rxjs';
 import { Album } from "../album.model";
-import { ALBUMS } from "../albums.data";
 import { AlbumService } from '../shared/album.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { AlbumService } from '../shared/album.service';
   styleUrls: ["./album-list.component.css"]
 })
 export class AlbumListComponent implements OnInit {
-  albumsArray: Album[];
+  albumsArray: Observable<Album[]>;
 
   constructor(private albumService: AlbumService) { };
 
@@ -21,10 +21,7 @@ export class AlbumListComponent implements OnInit {
     this.getAlbums();
   }
 
-  getAlbums() {
-    this.albumService.getAlbums()
-    .subscribe(
-        albums => this.albumsArray = albums,
-        error => console.log("Error: ", error));
-}
+  getAlbums(): void {
+    this.albumsArray = this.albumService.getAlbums();
+  }
 }
