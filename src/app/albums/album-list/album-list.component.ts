@@ -21,7 +21,10 @@ export class AlbumListComponent implements OnInit {
     this.getAlbums();
   }
 
-   getAlbums(): void {
-    this.albumsArray = this.albumService.getAlbums();
-  }
+  getAlbums() {
+    this.albumService.getAlbums()
+    .subscribe(
+        albums => this.albumsArray = albums,
+        error => console.log("Error: ", error));
+}
 }
