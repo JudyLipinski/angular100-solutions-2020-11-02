@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "my-angular-albums"
+    }
+  },
+  "defaultProject": "my-angular-albums",
+  "cli": {
+    "analytics": false
+  }
 }
