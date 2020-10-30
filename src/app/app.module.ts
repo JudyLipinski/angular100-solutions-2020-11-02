@@ -22,7 +22,7 @@ import { AlbumsModule } from './albums/albums.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AlbumsModule
+    // AlbumsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
